@@ -1,6 +1,6 @@
 import "./App.css";
 
-import React, { useState } from "react";
+import React from "react";
 import VolunteerForm from "./Form";
 // import * as yup from "yup"; //yup will be used for validation
 // import schema from "./Validation/formSchema"; //schema questions if the conditions are being met
@@ -8,6 +8,14 @@ import VolunteerForm from "./Form";
 
 function App() {
   //app component
+
+  // const [form, setForm] = useState({
+  //   //INITIAL STATE FOR FORM
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  //   terms: ""
+  // });
 
   //FORM ERROR STATE IS BELOW
 
@@ -20,7 +28,7 @@ function App() {
 
   //FRIENDS STATE?? MAYBE NOT NEEDED, IS BELOW
 
-  // const [friends, setFriends] = useState([]); //friends initial state
+  // const [volunteers, setVolunteers] = useState([]); //friends initial state
   // const [disabled, setDisabled] = useState(true); //disabled initial state
 
   return (
