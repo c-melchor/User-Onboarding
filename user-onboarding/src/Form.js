@@ -6,12 +6,6 @@ import React, { useState, useEffect } from "react";
 import schema from "./Validation/formSchema";
 
 export default function VolunteerForm() {
-  //   const initialVal = {
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //     terms: false
-  //   };
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -24,9 +18,12 @@ export default function VolunteerForm() {
   //don't forget to add onChange to the input tag below!!
 
   const onChange = event => {
-    console.log("EVENT TARGET VALUE", event.target.value);
+    let value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
 
-    setForm({ ...form, [event.target.name]: event.target.value });
+    setForm({ ...form, [event.target.name]: value });
 
     //     const target = event.target;
     //     const evtName = target.name;
@@ -98,9 +95,10 @@ export default function VolunteerForm() {
           />
         </label>
 
-        <label>
+        <label htmlFor="terms">
           Terms and Conditions:
           <input
+            id="terms"
             name="terms"
             type="checkbox"
             checked={form.terms}
