@@ -7,28 +7,6 @@ import VolunteerForm from "./Form";
 // import axios from "axios";
 
 function App() {
-  //app component
-
-  // const [form, setForm] = useState({
-  //   //INITIAL STATE FOR FORM
-  //   name: "",
-  //   email: "",
-  //   password: "",
-  //   terms: ""
-  // });
-
-  //FORM ERROR STATE IS BELOW
-
-  // const [formErrors, setFormErrors] = useState({
-  //   //formError initial state
-  //   name: "",
-  //   email: "",
-  //   password: ""
-  // });
-
-  //FRIENDS STATE?? MAYBE NOT NEEDED, IS BELOW
-
-  // const [volunteers, setVolunteers] = useState([]); //friends initial state
   // const [disabled, setDisabled] = useState(true); //disabled initial state
 
   return (
