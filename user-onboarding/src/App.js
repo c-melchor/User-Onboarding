@@ -52,19 +52,6 @@ function App() {
   //this uses a spread operator to copy the old obj, the array looking thing allows you to pick which key to replace the value of.
   //don't forget to add onChange to the input tag below!!
 
-  // const onChange = event => {
-  //   event.persist();
-  //   const newData = {
-  //     ...form,
-  //     [event.target.name]:
-  //       event.target.type === "checkbox"
-  //         ? event.target.checked
-  //         : event.target.value
-  //   };
-  //   validate(event);
-  //   setForm(newData);
-  // };
-
   const onChange = event => {
     //code below is to make this async
     event.persist();
@@ -95,6 +82,12 @@ function App() {
         //.push() doesn't work in hooks
         //setUser takes (original array => [...spread of old array, PLUS what you want to add]);
         setUsers(arr => [...arr, res.data]);
+        setFormState({
+          name: "",
+          email: "",
+          password: "",
+          terms: false
+        });
         // setUsers(res.data.data); //need to see what data will look like first***************************
       })
       .catch(err => {
