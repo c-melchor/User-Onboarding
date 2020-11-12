@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export default yup.object().shape({
+const formSchema = yup.object().shape({
   // .required() takes an error message
   name: yup.string().required("Name is a required field"),
   email: yup
@@ -15,3 +15,5 @@ export default yup.object().shape({
     .boolean()
     .oneOf([true], "Please check box to agree to Terms and Conditions")
 });
+
+export default formSchema;
