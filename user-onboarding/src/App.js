@@ -33,9 +33,14 @@ function App() {
     //method in yup called reach, which allows us to reach into our schema and test one piece of it
     //.reach(schema, field to validate)
     //in this field(2nd param of reach), validate this data(info in validate method
+
+    let value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
     yup
       .reach(formSchema, event.target.name)
-      .validate(event.target.value)
+      .validate(value)
       .then(valid => {
         setErrorState({ ...errorState, [event.target.name]: "" });
       })
@@ -104,7 +109,7 @@ function App() {
         onChange={onChange}
         errorState={errorState}
       />
-      <pre>{JSON.stringify(users)}</pre>
+      <pre>{users.length > 0 && JSON.stringify(users)}</pre>
     </div>
   );
 }

@@ -46,8 +46,18 @@ describe("Form App", () => {
     cy.contains("christina").should("exist");
     cy.contains("email@me.com").should("exist");
     cy.contains("password").should("exist");
-    cy.contains("on").should("exist");
+    termsBoxCheck()
+      .check()
+      .should("be.checked");
   });
+
+  //check if inputs are empty
+  //if no name, is there an error
+  //if no email, is there an error
+  //if no password > 5 is there an error
+  //if terms not checked is there an error
+
+  //   nameInput().should("not.be.empty");
 
   //validation of empty form
   it("check if form is empty", () => {
